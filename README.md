@@ -1,6 +1,6 @@
 A library which implements the similar notification center feature on iOS platform in C#.
 
-###Example:###
+### Example:
 
 ```C#
         static void Main(string[] args)
