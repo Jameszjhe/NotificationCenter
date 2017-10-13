@@ -80,6 +80,7 @@ namespace Gudo.Foundation
 			string key = KeyFromNotificationName(notification.Name);
 
 			List<NotificationDelegate> delegates = new List<NotificationDelegate>();
+			List<NotificationDelegate> observers = null
 
 			lock (_globalLock)
 			{
