@@ -83,11 +83,21 @@ namespace Gudo.Foundation
 
 			lock (_globalLock)
 			{
-				delegates.AddRange((List<NotificationDelegate>)_observers[key]);
-
+				observers = (List<NotificationDelegate>)_observers[key];
+				
+				if (null != observers)
+				{
+					delegates.AddRange(observers);
+				}
+				
 				if (!string.Equals(key, "*"))
 				{
-					delegates.AddRange((List<NotificationDelegate>)_observers["*"]);
+					observers = (List<NotificationDelegate>)_observers["*"];
+					
+					if (null != observers)
+					{
+						delegates.AddRange(observers);
+					}
 				}
 			}
 
